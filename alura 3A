@@ -1,0 +1,34 @@
+<button class="botao" onclick="alterarBotao(this)">Botão 1</button>
+<button class="botao" onclick="alterarBotao(this)">Botão 2</button>
+<button class="botao" onclick="alterarBotao(this)">Botão 3</button>
+/* Estilos iniciais para os botões */
+.botao {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f8f9fa; /* Cor de fundo inicial */
+  border: 1px solid #007bff;
+  color: #007bff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+/* Estilos para o botão ativo */
+.botao.ativo {
+  background-color: #007bff; /* Cor de fundo quando o botão estiver ativo */
+  color: white;
+  font-weight: bold; /* Peso da fonte alterado para negrito */
+}
+function alterarBotao(botao) {
+  // Remover a classe 'ativo' de todos os botões
+  const botoes = document.querySelectorAll('.botao');
+  botoes.forEach(function(b) {
+    b.classList.remove('ativo');
+    b.style.fontWeight = 'normal'; // Reseta o peso da fonte
+    b.style.backgroundColor = ''; // Reseta a cor de fundo
+  });
+
+  // Adicionar a classe 'ativo' ao botão clicado
+  botao.classList.add('ativo');
+  botao.style.fontWeight = 'bold'; // Altera o peso da fonte para negrito
+  botao.style.backgroundColor = '#007bff'; // Altera a cor de fundo para azul
